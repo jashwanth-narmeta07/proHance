@@ -1,0 +1,36 @@
+{
+  "name": "workforce-saas-desktop-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Workforce SaaS desktop agent - activity/idle tracking, Windows-compatible",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "active-win": "8.2.1",
+    "axios": "^1.7.2",
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3",
+    "vitest": "^1.6.0"
+  },
+  "build": {
+    "appId": "com.workforcesaas.agent",
+    "productName": "Workforce SaaS Agent",
+    "win": {
+      "target": ["nsis"],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "include": "build/installer.nsh"
+    },
+    "files": ["src/**/*", "build/icon.png", "package.json"]
+  }
+}

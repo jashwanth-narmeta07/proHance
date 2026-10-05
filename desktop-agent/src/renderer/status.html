@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Workforce SaaS Agent</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", sans-serif; margin: 0; padding: 20px; background: #f9fafb; color: #111827; }
+  h1 { font-size: 15px; margin: 0 0 16px; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e5e7eb; font-size: 13px; }
+  .row:last-of-type { border-bottom: none; }
+  .label { color: #6b7280; }
+  .value { font-weight: 600; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot.connected { background: #16a34a; }
+  .dot.offline { background: #dc2626; }
+  .note { margin-top: 16px; font-size: 11px; color: #9ca3af; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <h1>Agent status</h1>
+
+  <div class="row">
+    <span class="label">Connection</span>
+    <span class="value" id="connection"><span class="dot offline"></span>Checking...</span>
+  </div>
+  <div class="row">
+    <span class="label">Activity tracking</span>
+    <span class="value" id="tracking">Stopped</span>
+  </div>
+  <div class="row">
+    <span class="label">Last heartbeat</span>
+    <span class="value" id="heartbeat">—</span>
+  </div>
+  <div class="row">
+    <span class="label">Events queued for sync</span>
+    <span class="value" id="pending">0</span>
+  </div>
+  <div class="row">
+    <span class="label">Pending idle justification</span>
+    <span class="value" id="pendingIdle">None</span>
+  </div>
+
+  <p class="note">
+    This agent tracks system-wide idle time (not app content, keystrokes, or screenshots) and
+    synchronizes activity events to your organization's Workforce SaaS backend. Queued events are
+    kept locally and retried automatically if the connection drops.
+  </p>
+
+  <script src="status.js"></script>
+</body>
+</html>

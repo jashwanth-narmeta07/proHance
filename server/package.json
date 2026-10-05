@@ -1,0 +1,40 @@
+{
+  "name": "workforce-saas-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Workforce Analytics & Management SaaS - Backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/.bin/jest --runInBand",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "nanoid": "^5.0.7",
+    "socket.io": "^4.7.5",
+    "winston": "^3.13.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.2.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
+  }
+}

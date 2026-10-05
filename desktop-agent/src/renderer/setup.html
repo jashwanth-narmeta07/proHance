@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Workforce SaaS Agent Setup</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", sans-serif; margin: 0; padding: 24px; background: #f9fafb; color: #111827; }
+  h1 { font-size: 16px; margin: 0 0 4px; }
+  p.hint { font-size: 12px; color: #6b7280; margin: 0 0 20px; line-height: 1.4; }
+  label { display: block; font-size: 12px; font-weight: 600; margin: 14px 0 4px; color: #374151; }
+  input { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; }
+  button { margin-top: 20px; width: 100%; padding: 10px; background: #2563eb; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status { margin-top: 10px; font-size: 12px; }
+  .status.ok { color: #16a34a; }
+  .status.error { color: #dc2626; }
+</style>
+</head>
+<body>
+  <h1>Set up this device</h1>
+  <p class="hint">
+    Register this device from the web dashboard under Devices, then paste the token shown there.
+    It's only shown once.
+  </p>
+
+  <label for="apiBaseUrl">Backend URL</label>
+  <input id="apiBaseUrl" value="http://192.168.68.64:5000/api/v1" />
+
+  <label for="deviceToken">Device token</label>
+  <input id="deviceToken" placeholder="Paste the token from the Devices page" />
+
+  <label for="deviceName">Device name (for your reference)</label>
+  <input id="deviceName" placeholder="e.g. My laptop" />
+
+  <button id="testBtn">Test connection</button>
+  <div id="status" class="status"></div>
+  <button id="saveBtn" disabled>Save &amp; start agent</button>
+
+  <script src="setup.js"></script>
+</body>
+</html>

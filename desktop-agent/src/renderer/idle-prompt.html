@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>What were you doing?</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", sans-serif; margin: 0; padding: 20px; background: #ffffff; color: #111827; }
+  h1 { font-size: 15px; margin: 0 0 6px; }
+  p.hint { font-size: 12px; color: #6b7280; margin: 0 0 16px; line-height: 1.4; }
+  label { display: block; font-size: 12px; font-weight: 600; margin: 12px 0 4px; color: #374151; }
+  select, textarea { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; font-family: inherit; }
+  textarea { resize: none; }
+  .actions { margin-top: 18px; display: flex; gap: 8px; }
+  button { flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  #skipBtn { background: #f3f4f6; color: #374151; }
+  #submitBtn { background: #2563eb; color: white; }
+  #submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+</style>
+</head>
+<body>
+  <h1 id="title">You've been inactive</h1>
+  <p class="hint" id="hint">What were you doing during this time? This helps keep your activity record accurate - it's not used to judge you.</p>
+
+  <label for="reason">Reason</label>
+  <select id="reason">
+    <option value="">Select a reason...</option>
+    <option value="BREAK">Break</option>
+    <option value="MEETING">Meeting</option>
+    <option value="LUNCH">Lunch</option>
+    <option value="PHONE_CALL">Phone Call</option>
+    <option value="TRAINING">Training</option>
+    <option value="READING_THINKING">Reading / Thinking</option>
+    <option value="WORK_AWAY_FROM_COMPUTER">Work Away From Computer</option>
+    <option value="OTHER">Other</option>
+  </select>
+
+  <div id="otherWrap" style="display: none;">
+    <label for="otherNote">Please specify</label>
+    <textarea id="otherNote" rows="2" placeholder="Briefly describe what you were doing"></textarea>
+  </div>
+
+  <div class="actions">
+    <button id="skipBtn">Skip for now</button>
+    <button id="submitBtn" disabled>Submit</button>
+  </div>
+
+  <script src="idle-prompt.js"></script>
+</body>
+</html>
